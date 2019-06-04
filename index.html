@@ -9,13 +9,172 @@
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- external css -->
-    <link rel="styleSheet" href="./css/reset.css">
+    <link rel="styleSheet" href="./css/style.css">
     <title>Cyrstal-Game</title>
 </head>
 <body>
 
+    <div class="container">
+        <div class="jumbotron">
+        <h1 class="display-4">Mineral Harvester</h1>
+        <p class="lead">A simple game about collecting cyrstals.</p>
+        <hr class="my-4">
+        <div class="row">
+        <div class="col-md-6">
+        <p>You will be given a random number at the start of the game.<br>
+        There are four crystals below. By clicking on a crystal you will 
+        add a specific amound of points of points to your total score.<br>
+        You win the game by matching your total score to random number, 
+        you lose the game if your total score goes above the random number.<br>
+        The value of each crystal is hidden from you until you click on it.<br>
+        Each time when the game starts, the game will change the values of each crystal.
+        </p>
+        </div>
+        <div class="col-md-6">
+        <img src="./images/scv2-01.png" class="" id="scv">    
+
+        </div>
+        </div>
+        </div>
+
+        <!-- <div class="row mb-5">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                      Minerals Required 
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">random number</h5>
+                      <p class="card-text"></p>
+                      
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                      Current yeild
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">player's score</h5>
+                      <p class="card-text"></p>
+                      
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                      Minerals
+                    </div>
+                    <div class="card-body">
+                        <img src="images/crystal-white-BG-_0000_green.png" class="rounded float-left" id="green" alt="...">
+                        <img src="images/crystal-white-BG-_0001_red.png" class="rounded float-left" id="red" alt="...">
+                        <img src="images/crystal-white-BG-_0002_blue.png" class="rounded float-left" id="blue" alt="...">
+                        <img src="images/crystal-white-BG-_0003_pink.png" class="rounded float-left" id="pink" alt="...">
+                        
+                      
+                    </div>
+                  </div>
+            </div>
+            
+        </div> -->
+
+        <div class="card-group mb-4 text-white">
+            <div class="card text-white bg-dark border-primary">
+                <div class="card-header border-primary">
+                  Minerals Required 
+                </div>
+                <div class="card-body text-white bg-dark">
+                  <h5 class="card-title">random number</h5>
+                  <p class="card-text"></p>
+                  
+                </div>
+              </div>
+            <div class="card bg-dark border-primary">
+                <div class="card-header border-primary">
+                  Current yeild
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">player's score</h5>
+                  <p class="card-text"></p>
+                  
+                </div>
+              </div>
+            <div class="card bg-dark border-primary">
+                <div class="card-header border-primary">
+                  Minerals
+                </div>
+                <div class="card-body">
+                    <img src="images/crystal-white-BG-_0000_green.png" class="rounded float-left" id="green" alt="...">
+                    <img src="images/crystal-white-BG-_0001_red.png" class="rounded float-left" id="red" alt="...">
+                    <img src="images/crystal-white-BG-_0002_blue.png" class="rounded float-left" id="blue" alt="...">
+                    <img src="images/crystal-white-BG-_0003_pink.png" class="rounded float-left" id="pink" alt="...">
+                    
+                  
+                </div>
+              </div>
+            
+            
+        </div>
+
+        <!-- <div class="row">
+            <div class="card-group">
+                <div class="card">
+                    <div class="card-header">
+                      Minerals Required 
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">random number</h5>
+                      <p class="card-text"></p>
+                      
+                    </div>
+                  </div>
+                <div class="card">
+                    <div class="card-header">
+                      Current yeild
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">player's score</h5>
+                      <p class="card-text"></p>
+                      
+                    </div>
+                  </div>
+                <div class="card">
+                    <div class="card-header">
+                      Minerals
+                    </div>
+                    <div class="card-body">
+                        <img src="images/crystal-white-BG-_0000_green.png" class="rounded float-left" id="green" alt="...">
+                        <img src="images/crystal-white-BG-_0001_red.png" class="rounded float-left" id="red" alt="...">
+                        <img src="images/crystal-white-BG-_0002_blue.png" class="rounded float-left" id="blue" alt="...">
+                        <img src="images/crystal-white-BG-_0003_pink.png" class="rounded float-left" id="pink" alt="...">
+                        
+                      
+                    </div>
+                  </div>
+                
+                
+            </div>
+        </div> -->
+
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <div class="card text-white bg-dark border-primary">
+                    <div class="card-header border-primary">
+                      Your performance history
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Wins: </p>
+                        <p class="card-text">Loses: </p>
+                      
+                    </div>
+                  </div>
+            </div>
+        </div>
 
 
+    </div>
 
 
 
