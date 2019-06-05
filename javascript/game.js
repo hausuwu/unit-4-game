@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
+    
     // assign random value to minerals required
-    var compTarget = Math.floor(Math.random() * (4 - 1 + 1)) + 1;
+    var compTarget = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
     console.log(compTarget);
     $("#compguess").text(compTarget);
 
@@ -27,12 +28,11 @@ function crystalValue (){
     $("#blue").attr("data-crystalvalue", blue);
     $("#pink").attr("data-crystalvalue", pink);
     
-    // console.log($("#green"));
 };
 
 // resets the minerals required
 function resetComp () {
-    var compTarget = Math.floor(Math.random() * (4 - 1 + 1)) + 1;
+    var compTarget = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
     $("#compguess").text(compTarget);
 }
 
@@ -47,12 +47,58 @@ $("img").on("click", function() {
     crystalValue = parseInt(crystalValue);
     yeild += crystalValue;
     console.log(yeild);
+    $("#playerscore").html(yeild);
 
+    if(yeild === compTarget) {
+        
+    function crystalValue (){
+        var green = Math.floor(Math.random() * (12 -1 + 1)) + 1;
+        var red = Math.floor(Math.random() * (12 -1 + 1)) + 1;
+        var blue = Math.floor(Math.random() * (12 -1 + 1)) + 1;
+        var pink = Math.floor(Math.random() * (12 -1 + 1)) + 1;
+        $("#green").attr("data-crystalvalue", green);
+        $("#red").attr("data-crystalvalue", red);
+        $("#blue").attr("data-crystalvalue", blue);
+        $("#pink").attr("data-crystalvalue", pink);    
+    };
 
+    function resetComp () {
+        var compTarget = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+        $("#compguess").text(compTarget);
+    }
 
+        wins++;
+        $("#playerscore").empty();
+        yeild = 0;        
+        resetComp();
+        crystalValue();
+        console.log(wins);
+    }
+    else if(yeild >= compTarget) {
 
+    function crystalValue (){
+        var green = Math.floor(Math.random() * (12 -1 + 1)) + 1;
+        var red = Math.floor(Math.random() * (12 -1 + 1)) + 1;
+        var blue = Math.floor(Math.random() * (12 -1 + 1)) + 1;
+        var pink = Math.floor(Math.random() * (12 -1 + 1)) + 1;
+        $("#green").attr("data-crystalvalue", green);
+        $("#red").attr("data-crystalvalue", red);
+        $("#blue").attr("data-crystalvalue", blue);
+        $("#pink").attr("data-crystalvalue", pink);    
+    };
 
+    function resetComp () {
+        var compTarget = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+        $("#compguess").text(compTarget);
+    }
 
+        loses++;
+        $("#playerscore").empty();
+        yeild = 0;        
+        resetComp();
+        crystalValue();
+        console.log(loses);
+    }
 
 });
 
