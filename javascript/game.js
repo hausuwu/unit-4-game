@@ -68,6 +68,7 @@ $("img").on("click", function() {
     }
 
         wins++;
+        $("#wins").text("Wins: " + wins);
         $("#playerscore").empty();
         yeild = 0;        
         resetComp();
@@ -93,6 +94,7 @@ $("img").on("click", function() {
     }
 
         loses++;
+        $("#loses").text("Loses: " + loses);
         $("#playerscore").empty();
         yeild = 0;        
         resetComp();
