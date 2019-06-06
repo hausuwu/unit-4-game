@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
     
-    // assign random value to minerals required
-    var compTarget = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-    console.log(compTarget);
-    $("#compguess").text(compTarget);
+// assign random value to minerals required
+var compTarget = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+console.log(compTarget);
+$("#compguess").text(compTarget);
 
 
 
@@ -15,14 +15,19 @@ var wins = 0;
 var loses = 0;
 // players score
 var yeild = 0;
+// values for the crystal
+var green;
+var red;
+var blue;
+var pink;
 
 // functions
-// generates random number for crystal images
-function crystalValue (){
-    var green = Math.floor(Math.random() * (12 -1 + 1)) + 1;
-    var red = Math.floor(Math.random() * (12 -1 + 1)) + 1;
-    var blue = Math.floor(Math.random() * (12 -1 + 1)) + 1;
-    var pink = Math.floor(Math.random() * (12 -1 + 1)) + 1;
+// generates random number for crystal images and it attributes the number to a custom data id 
+function displayCrystal (){
+    green = Math.floor(Math.random() * (12 -1 + 1)) + 1;
+    red = Math.floor(Math.random() * (12 -1 + 1)) + 1;
+    blue = Math.floor(Math.random() * (12 -1 + 1)) + 1;
+    pink = Math.floor(Math.random() * (12 -1 + 1)) + 1;
     $("#green").attr("data-crystalvalue", green);
     $("#red").attr("data-crystalvalue", red);
     $("#blue").attr("data-crystalvalue", blue);
@@ -30,13 +35,14 @@ function crystalValue (){
     
 };
 
-// resets the minerals required
+// resets the random minerals required
 function resetComp () {
-    var compTarget = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+    compTarget = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
     $("#compguess").text(compTarget);
 }
 
-crystalValue();
+// generate random crystal values by calling the function
+displayCrystal();
 
 
 
@@ -46,60 +52,31 @@ $("img").on("click", function() {
     var crystalValue = ($(this).attr("data-crystalvalue"));
     crystalValue = parseInt(crystalValue);
     yeild += crystalValue;
-    console.log(yeild);
+    // console.log(yeild);
     $("#playerscore").html(yeild);
 
     if(yeild === compTarget) {
-        
-    function crystalValue (){
-        var green = Math.floor(Math.random() * (12 -1 + 1)) + 1;
-        var red = Math.floor(Math.random() * (12 -1 + 1)) + 1;
-        var blue = Math.floor(Math.random() * (12 -1 + 1)) + 1;
-        var pink = Math.floor(Math.random() * (12 -1 + 1)) + 1;
-        $("#green").attr("data-crystalvalue", green);
-        $("#red").attr("data-crystalvalue", red);
-        $("#blue").attr("data-crystalvalue", blue);
-        $("#pink").attr("data-crystalvalue", pink);    
-    };
-
-    function resetComp () {
-        var compTarget = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-        $("#compguess").text(compTarget);
-    }
-
+     
         wins++;
         $("#wins").text("Wins: " + wins);
         $("#playerscore").empty();
         yeild = 0;        
         resetComp();
-        crystalValue();
-        console.log(wins);
+        displayCrystal();
+        console.log("wins= " + wins);
+
     }
+    
     else if(yeild >= compTarget) {
-
-    function crystalValue (){
-        var green = Math.floor(Math.random() * (12 -1 + 1)) + 1;
-        var red = Math.floor(Math.random() * (12 -1 + 1)) + 1;
-        var blue = Math.floor(Math.random() * (12 -1 + 1)) + 1;
-        var pink = Math.floor(Math.random() * (12 -1 + 1)) + 1;
-        $("#green").attr("data-crystalvalue", green);
-        $("#red").attr("data-crystalvalue", red);
-        $("#blue").attr("data-crystalvalue", blue);
-        $("#pink").attr("data-crystalvalue", pink);    
-    };
-
-    function resetComp () {
-        var compTarget = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-        $("#compguess").text(compTarget);
-    }
-
+        
         loses++;
         $("#loses").text("Loses: " + loses);
         $("#playerscore").empty();
         yeild = 0;        
         resetComp();
-        crystalValue();
-        console.log(loses);
+        displayCrystal();
+        console.log("losses= " + loses);
+
     }
 
 });
